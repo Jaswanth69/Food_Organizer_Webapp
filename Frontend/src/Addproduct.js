@@ -68,6 +68,7 @@ export default function Addproduct() {
         var qty = document.getElementById("Numberarea").value;
         var purdate = date.toString();
         var x = localStorage.getItem("userName")
+        var image=localStorage.getItem("Image")
         console.log(x + " " + itemname + " " + storage)
         console.log(purdate)
 
@@ -80,7 +81,7 @@ export default function Addproduct() {
             setQuantity(qty)
             // setimglink(localStorage.getItem("Image"))
             console.log(x + " " + itemname + " " + storage)
-            axios.post("http://localhost:3001/item/insert", { Itemname: itemname, emailId: x, storageplace: storage ,quantity:qty,date:purdate,Itemtype:itemtype })
+            axios.post("http://localhost:3001/item/insert", { Itemname: itemname, emailId: x, storageplace: storage ,quantity:qty,date:purdate,Itemtype:itemtype ,Img_link:image})
             var t = new Date();
             var h = t.getHours();
             var m = t.getMinutes();
