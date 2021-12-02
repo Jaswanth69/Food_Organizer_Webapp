@@ -4,10 +4,10 @@ import Video from '../../Videos/video.mp4'
 import { Button } from '../Button';
 
 
-const Info = () =>{
+const Info = () =>{ // main landing page
     const [hover,setHover] = useState(false);
 
-    const onHover = () => {
+    const onHover = () => { //setting on hover 
         setHover(!hover)
     }
 

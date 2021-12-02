@@ -1,17 +1,11 @@
 import React, { useEffect} from "react";
-import { Link } from 'react-router-dom';
-import { FaInfo } from "react-icons/fa";
-import {BsInfoCircle} from "react-icons/bs";
-import {AiOutlineStar} from "react-icons/ai";
 import Navbar from "./components/Navbar";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "./Home.css";
 import "./Boxes.css";
 import Footer from "./components/Footer/Footer";
-// import ScrollToTop from "./components/Sidebar/ScrollToTop";
 import Scrolltop from "./components/Scrolltop";
-import { BiMenu } from "react-icons/bi";
 import Search from "./Search";
 
 // shows suggestion to add items to inventory

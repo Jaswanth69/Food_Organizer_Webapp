@@ -1,11 +1,9 @@
 import React,{useState,useEffect} from 'react'
-import { Button } from './components/StyleScrolltop'
 import axios from 'axios'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 var id
-var fname;
-export default function Updateprofile() {
+export default function Updateprofile() { // update profile component
     const [name, setname] = useState("");
     const [number, setnumber] = useState(0);
     const [gender,setgender]=useState("");
@@ -14,8 +12,8 @@ export default function Updateprofile() {
     const [pgender,setpgender]=useState("");
    useEffect(()=>{
     var x = localStorage.getItem("userName");
-    axios.post("http://localhost:3001/user/getmailid", { emailId: x });
-    axios.get("http://localhost:3001/user/read").then((response) => {
+    axios.post("http://localhost:3001/user/getmailid", { emailId: x }); // getting user from database with this email id
+    axios.get("http://localhost:3001/user/read").then((response) => { // reading user from database
         // console.log(response.data);
         id=response.data[0]._id 
         setpname(response.data[0].username);
@@ -26,7 +24,7 @@ export default function Updateprofile() {
       });
    },[]);
 
-const updatedetails=()=>{
+const updatedetails=()=>{ // updating details on button click
     // console.log(pname);
     // console.log(number);
     // console.log(gender);
@@ -42,7 +40,7 @@ const updatedetails=()=>{
     // };
     // if(Object.keys(name).length==0)
     //     setname(pname)
-    axios.put("http://localhost:3001/user/update",{id:id,username:name,phone:number,gender:gender});
+    axios.put("http://localhost:3001/user/update",{id:id,username:name,phone:number,gender:gender}); // update details in database
 }
     return (
         <div>   

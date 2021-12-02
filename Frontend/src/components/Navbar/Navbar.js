@@ -4,12 +4,12 @@ import { MobileIcon, Nav, NavbarContainer, NavBtn, NavBtnLink, NavItem, NavLinks
 import { animateScroll as scroll } from 'react-scroll';
 
 
-const Navbar = ({toggle}) =>{
+const Navbar = ({toggle}) =>{ // navbar component 
 
-    const [scrollNav,setScrollNav] = useState(false);
+    const [scrollNav,setScrollNav] = useState(false);  //setting smooth scroll
 
-    const changeNav = ()=> {
-        if(window.scrollY >= 80){
+    const changeNav = ()=> { // changing navbar according to the actions
+        if(window.scrollY >= 80){ 
             setScrollNav(true)
         }
         else{
@@ -17,12 +17,12 @@ const Navbar = ({toggle}) =>{
         }
     }
 
-    useEffect(()=>{
-        window.addEventListener('scroll',changeNav)
+    useEffect(()=>{ // using useeffect
+        window.addEventListener('scroll',changeNav) //adding event listner to window
     },[]);
 
-    const toggleHome = () =>{
-        scroll.scrollToTop();
+    const toggleHome = () =>{ // toggling to home
+        scroll.scrollToTop(); // scrolling to top
     }
     return(
         <>

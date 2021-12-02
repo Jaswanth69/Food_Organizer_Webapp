@@ -1,8 +1,8 @@
 const express = require("express");
-const { where, $where } = require("../Models/Items");
 const router = express.Router();
 const inventorydetails = require("../Models/Items");
 
+// to insert items to the database
 router.post("/insert", async (req, res) => {
 
    const item = new inventorydetails(req.body);
@@ -19,6 +19,8 @@ router.post("/insert", async (req, res) => {
       console.log(err);
    }
 });
+
+// to find an item from database
 router.get("/read", async (req, res) => {
    // const mail=req.body.emailId
    // console.log(mail)
@@ -33,6 +35,7 @@ router.get("/read", async (req, res) => {
       
     });
 
+//to delete an item from database or inventory
 router.delete("/delete/:id",async(req,res)=>{
    const id=req.params.id;
    await inventorydetails.findByIdAndRemove(id).exec()
