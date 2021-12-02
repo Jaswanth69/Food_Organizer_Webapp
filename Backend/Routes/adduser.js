@@ -1,7 +1,7 @@
 const express = require("express");
 const User = require("../Models/User");
 const router = express.Router();
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
 const userdetails = require("../Models/User");
 const { where, $where } = require("../Models/User");
 
