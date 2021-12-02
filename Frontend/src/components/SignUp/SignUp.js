@@ -7,7 +7,7 @@ import "../Navbar.css";
 // Signup page
 
 export default function SignUp() {
-  const { handleChange, values, handleSubmit, errors } = useForm(validate);
+  const { handleChange, values, handleSubmit, errors } = useForm(validate); // handling events
 
   //   const togglePassword = document.querySelector("#togglePassword");
   //   const pass = document.querySelector("#password");

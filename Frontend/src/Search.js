@@ -7,19 +7,18 @@ import datagrains from './grainsdata';
 import dataleafyvegetables from './Leafydata';
 import dataflour from './floursdata';
 import datadryfruits from './dryfruitsdata';
-import PropTypes from 'prop-types'
 import './cards.css';
 
-const Search = (props)=> {
+const Search = (props)=> { //setting items on home page 
 
-    const [filter, setFilter] = useState('');
+    const [filter, setFilter] = useState(''); // filter
 
-    const searchText = (event) =>{
+    const searchText = (event) =>{ // serach box in home page
         setFilter(event.target.value)
     }
     let dataSearch;
     
-    if(props.value==="1"){
+    if(props.value==="1"){ // different categories of items in home page
         dataSearch = datafruits.cardData.filter(item =>{
             return Object.keys(item).some(key =>
                 item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())

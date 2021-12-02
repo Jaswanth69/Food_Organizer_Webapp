@@ -6,33 +6,20 @@ import React, { useState, useEffect } from "react";
 // import 'animate.css';
 import "./Boxes.css";
 import "./Profile.css"
-//import DatePicker from 'react-date-picker';
-import { MdHeight } from "react-icons/md";
-//import Datepick from './Datepick';
-// import { utils } from 'react-modern-calendar-datepicker';
-// import 'react-modern-calendar-datepicker/lib/DatePicker.css';
-// import DatePicker from 'react-modern-calendar-datepicker';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-//
-// import React, { useState } from 'react'
-// import Footer from './components/Footer/Footer'
-// import Navbar from './components/Navbar'
-// import './Profile.css'
-// import axios from 'axios';
 
 //Profile page shows user details
-export default function Profile() {
+export default function Profile() { //profile page component
 
-  const [name, setname] = useState("");
-  const [number, setnumber] = useState(0);
-  const [gender,setgender]=useState("");
-  const [address, setaddress] = useState("");
+  const [name, setname] = useState(""); // name of user
+  const [number, setnumber] = useState(0); // phone number of user
+  const [gender,setgender]=useState(""); // gender of user
 var id;
   useEffect(()=>{
     var x = localStorage.getItem("userName");
-    axios.post("http://localhost:3001/user/getmailid", { emailId: x });
-    axios.get("http://localhost:3001/user/read").then((response) => {
+    axios.post("http://localhost:3001/user/getmailid", { emailId: x }); // getting mail id from the database
+    axios.get("http://localhost:3001/user/read").then((response) => { // reading user from database
       // console.log(response.data);
       // console.log(response.data)
       id=response.data[0]._id

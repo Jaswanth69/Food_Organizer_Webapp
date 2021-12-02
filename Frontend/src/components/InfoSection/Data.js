@@ -1,7 +1,7 @@
 import img1 from "../../images/svg-1.svg"
 import img2 from "../../images/svg-2.svg"
 
-export const homeObjOne = {
+export const homeObjOne = { // object one for landing poge
     id: 'about',
     lightBg: false,
     lightText: true,
@@ -16,10 +16,11 @@ export const homeObjOne = {
     alt: 'Image',
     dark: true,
     primary:true,
-    darkText: false
+    darkText: false,
+    targetPath: "about"
 }
 
-export const homeObjTwo = {
+export const homeObjTwo = { //object 2 for landing page
     id: 'contact',
     lightBg: true,
     lightText: false,
@@ -33,11 +34,11 @@ export const homeObjTwo = {
     alt: 'Contact',
     dark: false,
     primary:false,
-    darkText: true
-
+    darkText: true,
+    targetPath:"contact"
 }
 
-export const homeObjThree = {
+export const homeObjThree = {// object 3 for landing page
     id: 'signup',
     lightBg: false,
     lightText: true,
@@ -51,6 +52,7 @@ export const homeObjThree = {
     alt: 'Image',
     dark: true,
     primary:true,
-    darkText: false
+    darkText: false,
+    targetPath: "signup"
 
 }

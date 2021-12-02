@@ -1,9 +1,5 @@
 export const MenuList = [
     {
-        title: "FO",
-        url: "/carousel",
-      },
-    {
       title: "Home",
       url: "/home",
     },
@@ -23,6 +19,10 @@ export const MenuList = [
     {
       title: "Notifications",
       url: "/notifications",
+    },
+    {
+      title: "Logout",
+      url: "/",
     },
     
   ];

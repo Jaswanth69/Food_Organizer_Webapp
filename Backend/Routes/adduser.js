@@ -1,27 +1,28 @@
-const { response } = require("express");
 const express = require("express");
 const User = require("../Models/User");
+const Otp = require("../Models/otp");
 const router = express.Router();
-// const jwt = require("jsonwebtoken");
 const userdetails = require("../Models/User");
-const { where, $where } = require("../Models/User");
 
 var mail;
+var otp;
 
 // adding user from signup
 router.post("/insert", async (req, res) => {
   try {
+    // getting details from frontend
     const name = req.body.username;
     const mail = req.body.emailId;
     const phoneNum = req.body.phone;
     const gen = req.body.gender;
     const password = req.body.password;
 
+    // finding user with a particular email id
     userdetails.find({ emailId: mail }, (err, result) => {
       if (err) {
         res.send(err);
       } else {
-        if (Object.keys(result).length === 0) {
+        if (Object.keys(result).length === 0) { // if no user exists with this email id
           const user = new userdetails({
             username: name,
             emailId: mail,
@@ -29,7 +30,7 @@ router.post("/insert", async (req, res) => {
             gender: gen,
             password: password,
           });
-          user.save();
+          user.save(); // saving user
           res.send("Registered sucessfully");
         } else {
           res.send("user exists");
@@ -42,41 +43,15 @@ router.post("/insert", async (req, res) => {
   }
 });
 
-//login route
-// router.post("/login", async (req, res) => {
-//   try {
-//     const { emailId, password } = req.body;
-//     userdetails.find({ emailId: mail }, (err, result) => {
-//       if (Object.keys(result).length === 0) {
-//         res.send("user exists");
-//       }
-//       if (result.password !== password) {
-//         res.send("invalid password please check it");
-//       }
-
-//       let payload = result._id;
-
-//       jwt.sign(payload, "jwtSecret", { expiresIn: 36000000 }),
-//         (err, token) => {
-//           if (err) throw err;
-//           return res.json({ token });
-//         };
-//     });
-//   } catch (error) {}
-// });
-
-//getting mail from frontend
-
+// getting email id from frontend 
 router.post("/getmailid", async (req, res) => {
   mail = req.body.emailId;
   // console.log(mail);
 });
 
 //reading user specific data
-
 router.get("/read", async (req, res) => {
-  console.log(req.body.userid);
-  userdetails.find({ emailId: mail }, (err, result) => {
+  userdetails.find({ emailId: mail }, (err, result) => { // finding a particular user with this email id
     if (err) {
       res.send(err);
     }
@@ -87,12 +62,13 @@ router.get("/read", async (req, res) => {
 
 // updates the userdetails based on emailid
 router.put("/update", async (req, res) => {
+  //getting user details 
   const name = req.body.username;
   const gen = req.body.gender;
   const phoneNum = req.body.phone;
 
   const id = req.body.id;
-  userdetails.findByIdAndUpdate(
+  userdetails.findByIdAndUpdate( // finding the user and updating the following details
     { _id: id },
     { username: name, phone: phoneNum, gender: gen },
     (err, result) => {
@@ -105,12 +81,34 @@ router.put("/update", async (req, res) => {
   );
 });
 
+// used for resetting password
+router.put("/reset-password", async (req, res) => {
+  const pass = req.body.password;
+  const id = req.body.id;
+  userdetails.findByIdAndUpdate( // finding user by user id and updating details of that user
+    { _id: id },
+    { password: pass },
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
+// sending otp to email id for resetting password
 router.post("/email-send", async (req, res) => {
-  let data = await User.findOne({ emailId: req.body.emailId });
+  
+const nodemailer = require("nodemailer");
+  let data = await User.findOne({ emailId: req.body.emailId }); // finding a user with an email id
   const responseType = {};
   if (data) {
-    let otpcode = Math.floor(Math.random() * 10000 + 1);
-    let otpData = new Otp({
+    let otpcode = Math.floor(Math.random() * 10000 + 1); // generating a random otp
+    otp = otpcode;
+    // console.log(otp);
+    let otpData = new Otp({ // creating otp schema
       emailId: req.body.emailId,
       code: otpcode,
       expireIn: new Date().getTime() + 300 * 1000,
@@ -118,6 +116,42 @@ router.post("/email-send", async (req, res) => {
     let otpResponse = await otpData.save();
     responseType.statusText = "Success";
     responseType.message = "Please check your Email Id";
+    async function main() { // sending email using nodemailer
+    
+      // create reusable transporter object using the default SMTP transport
+      let transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com", // gmail smtp server link
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+          user: "foodorg4@gmail.com", // gmail user
+          pass: "foodorg123", // gmail password
+        },
+      });
+    
+      // send mail with defined transport object
+      let info = await transporter.sendMail({
+        from: '"Food Organizer" <foodorg4@gmail.com>', // sender address
+        to: req.body.emailId, // list of receivers
+        subject: "Food Organizer - Password recovery", // Subject line
+        text: otpcode+" is your Food organizer OTP. Please do not share this with anyone.", // plain text body
+      });
+    
+      if(info.messageId){ //if mail is sent succesfully
+        res.send("email sent");
+      }
+      else{ //mail is not sent successfully
+        res.send("Error with sending email");
+      }
+      console.log("Message sent: %s", info.messageId);
+      // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    
+      // Preview only available when sending through an Google account
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+      // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+    }
+    
+    main().catch(console.error);
   } else {
     responseType.statusText = "error";
     responseType.message = "Email Id not exists";
@@ -125,11 +159,18 @@ router.post("/email-send", async (req, res) => {
   res.status(200).json(responseType);
 });
 
+router.post("/getOtp", async (req, res) => {
+  console.log("hiji ---"+otp)
+  res.send(otp);
+
+});
+
 //-------------------------------------------------------
 
+// sending a confirmation mail on adding a product to inventory
 router.post("/sendemail", function (req, res, next) {
 	"use strict";
-const nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer"); //node mailer
 
 // async..await is not allowed in global scope, must use a wrapper
 async function main() {
@@ -139,8 +180,8 @@ async function main() {
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
+    host: "smtp.gmail.com", //gmail smtp server link
+    port: 587, 
     secure: false, // true for 465, false for other ports
     auth: {
       user: "foodorg4@gmail.com", // generated ethereal user
@@ -154,7 +195,6 @@ async function main() {
     to: req.body.emailId, // list of receivers
     subject: req.body.notifications.title, // Subject line
     text: req.body.notifications.body, // plain text body
-    // html: "<b>Hello world?</b>", // html body
   });
 
   if(info.messageId){

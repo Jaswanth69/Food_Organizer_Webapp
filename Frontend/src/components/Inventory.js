@@ -1,22 +1,20 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
-import food from "../images/food.jpg";
 import Axios from "axios";
 import "./Inventory.css";
-import { Button } from "react-scroll";
 var x;
-export default function Inventory() {
-  const [foodlist, setfoodlist] = useState([]);
+export default function Inventory() { // inventory component
+  const [foodlist, setfoodlist] = useState([]); // foodlist array
   useEffect(() => {
-    x = localStorage.getItem("userName");
+    x = localStorage.getItem("userName"); // getting username from local storage
     // console.log(x);
-    Axios.get("http://localhost:3001/item/read").then((response) => {
+    Axios.get("http://localhost:3001/item/read").then((response) => { // reading user from database
       // setfoodlist(response);
       console.log(response);
-      setfoodlist(response.data);
+      setfoodlist(response.data); // setting foodlist
     });
   }, []);
-  const DeleteItem = (id) => {
+  const DeleteItem = (id) => { // deleting an item oin foodlist array
     Axios.delete(`http://localhost:3001/item/delete/${id}`);
 
     window.location.reload();

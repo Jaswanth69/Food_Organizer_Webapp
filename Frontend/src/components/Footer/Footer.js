@@ -4,10 +4,10 @@ import { animateScroll as scroll } from 'react-scroll';
 import {FaYoutube, FaFacebook} from 'react-icons/fa';
 import {FaGoogle} from 'react-icons/fa';
 
-const Footer = (target) => {
+const Footer = (target) => {//footer component
 
-    const toggleHome = () =>{
-        scroll.scrollToTop();
+    const toggleHome = () =>{// toggling home
+        scroll.scrollToTop(); // to scroll to top of the page
     }
 
     return(
@@ -31,7 +31,7 @@ const Footer = (target) => {
                         </FooterLinksItems>
                     </FooterLinksWrapper>
 
-                    <FooterLinksWrapper>
+                    {/* <FooterLinksWrapper>
 
                         <FooterLinksItems>
                             <FooterLinkTitle>Explore</FooterLinkTitle>
@@ -41,7 +41,7 @@ const Footer = (target) => {
                             <FooterA href="./calorie" target="_blank" >Calorie</FooterA>
                             <FooterA href="./profile" target="_blank" >Profile</FooterA>
                         </FooterLinksItems>
-                    </FooterLinksWrapper>
+                    </FooterLinksWrapper> */}
 
                 </FooterLinksContainer>
                 <AboutSection>

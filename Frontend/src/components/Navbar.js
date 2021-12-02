@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { MenuList } from "./MenuList";
 import DarkMode from "../DarkMode";
 import "./Navbar.css";
-import Logout from "./Navbar/Logout";
 import Axios from 'axios';
 
 var notif = 0;
@@ -44,13 +43,12 @@ const Navbar = () => {
       <div className="logo">
         F<font>O</font>
       </div>
-      <DarkMode />
+      
       <div className="menu-icon" onClick={handleClick}>
         <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
       </div>
       <ul className={clicked ? "menu-list" : "menu-list close"}>{menuList}</ul>
-
-      <Logout />
+      <DarkMode />
     </nav>
   );
 };

@@ -31,7 +31,7 @@ const Footer = () => {
                         </FooterLinksItems>
                     </FooterLinksWrapper>
 
-                    <FooterLinksWrapper>
+                    {/* <FooterLinksWrapper>
 
                         <FooterLinksItems>
                             <FooterLinkTitle>Explore</FooterLinkTitle>
@@ -40,8 +40,8 @@ const Footer = () => {
                             <FooterA href="./inventory" target="_blank" >Inventory</FooterA>
                             <FooterA href="./calorie" target="_blank" >Calorie</FooterA>
                             <FooterA href="./profile" target="_blank" >Profile</FooterA>
-                        </FooterLinksItems>
-                    </FooterLinksWrapper>
+                        </FooterLinksItems> 
+                    </FooterLinksWrapper>*/}
 
                 </FooterLinksContainer>
                 <AboutSection>
