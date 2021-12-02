@@ -75,7 +75,6 @@ router.post("/getmailid", async (req, res) => {
 //reading user specific data
 
 router.get("/read", async (req, res) => {
-  console.log(req.body.userid);
   userdetails.find({ emailId: mail }, (err, result) => {
     if (err) {
       res.send(err);

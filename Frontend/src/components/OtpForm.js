@@ -4,10 +4,11 @@ import {useHistory} from 'react-router-dom'
 export default function OtpForm() {
     const emailRef = useRef();
     var history = useHistory()
+    const [otpForm,showForm] = useState(true)
 
     const sendotp = async () => {
         try{
-            let url = 'http://localhost:3001/user/sendemail'
+            let url = 'http://localhost:3001/user/email-send'
             let options = {
                 method: 'POST',
                 url:url,

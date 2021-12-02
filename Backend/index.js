@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 const publicVapidKey = 'BAZmwAYKsc2buBkqgJgzZ57yXY2sDXtt615c17JQAUExuX3qda6e96uPqq1F4GmR4y4tERKPrajiw9cTgxHXBK8';
 const privateVapidKey = '5bjpnlei79paooICFKDqSSByckLOvQOpaZzmLdj4BR8';
 
-webpush.setVapidDetails('mailto:test@test.com',publicVapidKey,privateVapidKey);
+webpush.setVapidDetails('mailto:foodorg4@gmail.com',publicVapidKey,privateVapidKey);
 const DB =
   "mongodb+srv://foodorg:foodorg@userdetails.7jjbg.mongodb.net/users?retryWrites=true&w=majority";
 
