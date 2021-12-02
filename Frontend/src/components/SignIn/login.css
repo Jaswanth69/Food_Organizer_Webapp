@@ -12,3 +12,7 @@ a:hover{
     background-size:cover;
     opacity: 10;
 }
+
+body{
+    background-color: mediumturquoise;
+}
