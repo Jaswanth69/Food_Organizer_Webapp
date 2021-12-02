@@ -20,5 +20,9 @@ export const MenuList = [
       title: "Profile",
       url: "/profile",
     },
+    {
+      title: "Notifications",
+      url: "/notifications",
+    },
     
   ];

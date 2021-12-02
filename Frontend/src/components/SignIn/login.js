@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useForm from "./loginForm";
 import validate from "./validateInfo";
 import "./login.css";
+import "../Navbar.css";
 // Login page
 
 export default function Login() {
@@ -10,9 +11,21 @@ export default function Login() {
 
   return (
     <>
+    <div className="bgimg">
+    <div className="logo logomar">
+            Food<font>Organizer</font>
+            </div>
+            
+          
       <div className="form-container">
         <div className="form-content">
           <form className="form" onSubmit={handleSubmit} noValidate>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <h1>Sign in</h1>
 
             <div className="form-inputs">
@@ -31,6 +44,10 @@ export default function Login() {
 
             <div className="form-inputs">
               <label className="form-label">Password</label>
+              <a className="form-label fp">
+                  forgot password
+                  
+            </a>
               <input
                 id="password"
                 type="password"
@@ -51,6 +68,7 @@ export default function Login() {
             </Link>
           </form>
         </div>
+      </div>
       </div>
     </>
   );

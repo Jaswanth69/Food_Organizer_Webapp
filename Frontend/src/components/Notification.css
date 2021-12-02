@@ -1,0 +1,14 @@
+.notif-card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 5px;  
+    background-color:cornflowerblue;
+    text-align:justify;
+    text-indent: 20px;
+    /* padding-top: 10px; */
+}
+
+.notif-card:hover {
+    box-shadow: 0 16px 16px 0 rgba(0,0,0,0.2);
+  }

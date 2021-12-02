@@ -1,19 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuList } from "./MenuList";
 import DarkMode from "../DarkMode";
 import "./Navbar.css";
 import Logout from "./Navbar/Logout";
+import Axios from 'axios';
+
+var notif = 0;
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
+
+  useEffect(()=>{
+    var x = localStorage.getItem("userName");
+        Axios.post("http://localhost:3001/notify/getmailid", { emailId: x });
+        Axios.get("http://localhost:3001/notify/read").then((response) => {
+          notif = response.data.length;
+        })
+  },[]);
+
   const menuList = MenuList.map(({ url, title }, index) => {
     return (
       <>
         <li key={index}>
+          {title !== "Notifications" ?
           <NavLink exact to={url} activeClassName="active">
             {title}
-          </NavLink>
+          </NavLink>:
+          <NavLink exact to={url}activeClassName="active">
+            <i className="fas fa-bell"></i> ( {notif} )
+          </NavLink>} 
         </li>
       </>
     );

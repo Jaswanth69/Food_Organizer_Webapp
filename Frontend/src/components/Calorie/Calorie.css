@@ -1,3 +1,4 @@
+
 /* .contain {
   text-align: center;
 } */
@@ -12,11 +13,28 @@
 }
 
 .calorie-page{
-  background-image: url("../../images/calorie.jpg");
+  /* background-image: url("../../images/calorie.jpg"); */
   /* background-color: chartreuse; */
   background-size:100% 100%;
+  margin-left: 10px;
 }
-
 .col-form-label{
   color: black;
+}
+textarea.form-control {
+	width: 250px;
+	height: 35px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	/* background-position: bottom right;
+	background-repeat: no-repeat; */
+}
+
+select.form-select-sm {
+  width: 250px;
+	height: 35px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
 }

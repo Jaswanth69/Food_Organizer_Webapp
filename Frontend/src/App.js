@@ -16,17 +16,18 @@ import Grains from "./Grains";
 
 import Addproduct from "./Addproduct";
 import DarkMode from "./DarkMode";
-// import ReactNotification from 'react-notifications-component';
+import ReactNotification from 'react-notifications-component';
 
 import About from "./components/About";
 import Inventory from "./components/Inventory";
 import Login from "./components/SignIn/login";
 import Updateprofile from "./Updateprofile";
+import Notifications from "./components/Notifications";
 
 function App() {
   return (
     <Router>
-      {/* <ReactNotification/> */}
+      <ReactNotification/>
       <Switch>
         <Route path="/" component={HomePage} exact />{" "}
         {/* Directs to  open page of website */}
@@ -65,6 +66,7 @@ function App() {
       {/*Directs to  Addproduct   page for adding items to inventory  */}
       {/* <Route path="/inventory"><Inventory id1={a} ></Inventory></Route>  */}
       {/* </Switch> */}
+      <Route path="/notifications" component={Notifications}/>
     </Router>
   );
 }

@@ -53,4 +53,8 @@
     align-items: center;
     margin-left: 750px;
   }
-  
+
+  .profilepage{
+    background-image: url("https://media.istockphoto.com/photos/profile-panel-picture-id1293180037?b=1&k=20&m=1293180037&s=170667a&w=0&h=vQ9FR0l5l_wM-HYX4peI7UH0lDC3yf9EHz8WqsytnU4=");
+    background-size: cover;
+  }

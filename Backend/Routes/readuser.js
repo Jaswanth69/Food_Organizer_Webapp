@@ -7,7 +7,7 @@ var mail
     console.log(mail)
 });
 router.get("/read", async (req, res) => {
-// console.log(mail)
+console.log(re)
 const mail1="cs19b022@iittp.ac.in"
  user.find({$where:{emailId:mail1}},(err,result)=>{
     if(err)

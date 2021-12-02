@@ -15,8 +15,11 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .boxes1 {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  /* background-image: url(https://www.google.com/search?q=neat+background+image+of+fruits&sxsrf=AOaemvJ0LUJXN8wXWTlZtk1gPEG087IeAw:1637833269153&tbm=isch&source=iu&ictx=1&fir=BTggURluLIARhM%252Cb39wzFtfE3tWlM%252C_%253BVyPjGh5PXX_2CM%252CNZRUjaEkys0L8M%252C_%253BEamkacRDBGh06M%252CNZRUjaEkys0L8M%252C_%253BM28C3C0PGroHBM%252CyV4Z0DyDZQmIBM%252C_%253BceaXVQp1MX7cuM%252Cb39wzFtfE3tWlM%252C_%253BpecRejNTUTTX-M%252Con0UOdphcXUcUM%252C_%253BkqFaTqwXN9tSIM%252Con0UOdphcXUcUM%252C_%253BuNRu620FrakXkM%252CC-2wGq_UiR6cPM%252C_%253Bt2nmvJtZ7HAn_M%252CnXCztXS0EEZLNM%252C_%253B1R4qpOsOc3tmzM%252ChyYOp6bl8HreHM%252C_&vet=1&usg=AI4_-kQxDbE8T3AsiLG8w1tBScIu-PnLWQ&sa=X&ved=2ahUKEwjey9WxnLP0AhWVSmwGHdvFABIQ9QF6BAgMEAE#imgrc=EamkacRDBGh06M); */
+  background-image: url("https://media.istockphoto.com/photos/red-grunge-background-picture-id171316682?b=1&k=20&m=171316682&s=170667a&w=0&h=IwoqSmgveZSQhteOHNa8yJ7H0penx2yToCWA6qNXDEc=");
+  background-size: cover;
 }
 
 .boxes2 {
@@ -40,9 +43,47 @@
   height: 145px;
 }
 
+.boxes5{
+    margin: 2px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 12px 18px -6px rgba(0, 0,0, 0.3);
+    border-radius: 10px 10px 10px 10px;
+    border-top: rgb(204, 78, 74);
+    border-width: 1px;
+    margin-left: 100px;
+    width: 20%;
+    height:145px;
+}
+
+.input_num{
+    border: black;
+    background-color: burlywood;
+    width: 50;
+}
+
+.img_addp{
+    padding-bottom: 55px;
+    width: 200px;
+    height: 200px;
+}
+
+.addproductcss{
+    padding-left:200px;
+    margin-left: 200px;
+    margin-top:15px;
+    background-color: rgb(185, 212, 88);
+    /* background-image: image("https://pixabay.com/photos/pancakes-breakfast-eat-candy-fork-697579/"); */
+    box-shadow: 0px 12px 18px -6px rgba(0, 0,0, 0.3);
+    border-radius: 10px 10px 10px 10px;
+    border-top: rgb(204, 78, 74);
+    border-width: 1px;
+    height:500px;
+    width:70%;
+}
+
 .boxes4 {
   margin: 2px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(234, 241, 233);
   box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
   border-radius: 10px 10px 10px 10px;
   border-top: rgb(204, 78, 74);

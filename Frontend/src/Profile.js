@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 // import 'react-notifications-component/dist/theme.css';
 // import 'animate.css';
 import "./Boxes.css";
+import "./Profile.css"
 //import DatePicker from 'react-date-picker';
 import { MdHeight } from "react-icons/md";
 //import Datepick from './Datepick';
@@ -49,7 +50,10 @@ var id;
     <>
       <Navbar />
       <div className="profilepage">
-        <h1> this is profile page</h1>
+        <div className="container">
+        <h1> Profile Page</h1>
+        <br/>
+        </div>
         <div className="mb-3 row">
           <label htmlFor="inputtext" className="col-sm-2 col-form-label">
             Name
@@ -102,17 +106,18 @@ var id;
             ></textarea>
           </div>
         </div>
+        <div className="container">
         <a
           id="update_buttton"
           type="button"
          href="/updateprofile"
-          className="btn btn-primary"
+          className="btn btn-primary btn_up"
         >
           Update profile
         </a>
+        </div>
       </div>
       <Footer target="Profile" />
     </>
   );
 }
-
