@@ -1,27 +1,21 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-// import ReactNotification from 'react-notifications-component';
-// import { store } from 'react-notifications-component';
-// import 'react-notifications-component/dist/theme.css';
-// import 'animate.css';
 import "./Boxes.css";
 import "./Profile.css"
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 //Profile page shows user details
-export default function Profile() { //profile page component
+export default function Profile() {
 
-  const [name, setname] = useState(""); // name of user
-  const [number, setnumber] = useState(0); // phone number of user
-  const [gender,setgender]=useState(""); // gender of user
+  const [name, setname] = useState("");
+  const [number, setnumber] = useState(0);
+  const [gender,setgender]=useState("");
 var id;
   useEffect(()=>{
     var x = localStorage.getItem("userName");
-    axios.post("http://localhost:3001/user/getmailid", { emailId: x }); // getting mail id from the database
-    axios.get("http://localhost:3001/user/read").then((response) => { // reading user from database
-      // console.log(response.data);
-      // console.log(response.data)
+    axios.post("http://localhost:3001/user/getmailid", { emailId: x });
+    axios.get("http://localhost:3001/user/read").then((response) => {
       id=response.data[0]._id
           if(response.data[0].emailId===x)
           {        

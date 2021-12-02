@@ -14,16 +14,7 @@ export default function Calorie() {
   bf_lean.set(1, 0.95);
   bf_lean.set(2, 0.9);
   bf_lean.set(3, 0.85);
-  // const bf_lean_men = new Map();
-  // bf_lean_men.set(0,1)
-  // bf_lean_men.set(1,0.95)
-  // bf_lean_men.set(2,0.90)
-  // bf_lean_men.set(3,0.85)
-  // const bf_lean_wmen = new Map();
-  // bf_lean_wmen.set(0,1)
-  // bf_lean_wmen.set(1,0.95)
-  // bf_lean_wmen.set(2,0.90)
-  // bf_lean_wmen.set(3,0.85)
+ 
 
   const handleclick = () => {
     var w = document.getElementById("ta1").value;
@@ -83,17 +74,18 @@ export default function Calorie() {
     }
     console.log(cal_per_day);
     setCal(cal_per_day);
+
+    if(val > 18.5 && val < 24.9){
+      alert("You are healthy")
+    }
+    else if(val > 25.0){
+      alert("You are overweight")
+    }
+    else{
+      // alert("You are underweight")
+    }
   };
-  // 25.0 or more overweight, 18.5 to 24.9 - healthy, underweight
-  // if(value > 18.5 && value < 24.9){
-  //   result = "You are healthy"
-  // }
-  // else if(value > 25.0){
-  //   result = "You are overweight"
-  // }
-  // else{
-  //   result = "You are underweight"
-  // }
+  
 
   return (
     <>
@@ -107,7 +99,7 @@ export default function Calorie() {
           <div className="col-sm-10">
             <textarea
               className="form-control"
-              id="ta"
+              id="ta1"
               rows="1"
             ></textarea>
           </div>
@@ -119,7 +111,7 @@ export default function Calorie() {
           <div className="col-sm-10">
             <textarea
               className="form-control"
-              id="ta"
+              id="ta2"
               rows="1"
             ></textarea>
           </div>
@@ -131,24 +123,12 @@ export default function Calorie() {
           <div className="col-sm-10">
             <textarea
               className="form-control"
-              id="ta"
+              id="ta3"
               rows="1"
             ></textarea>
           </div>
         </div>
-        <div className="mb-3 row">
-          <label htmlFor="inputtext" className="col-sm-2 col-form-label">
-            Body Fat Percentage
-          </label>
-          <div className="col-sm-10">
-            <textarea
-              className="form-control"
-              value={bf}
-              id="ta"
-              rows="1"
-            ></textarea>
-          </div>
-        </div>
+        
         <div className="mb-3 row">
           <label htmlFor="inputtext" className="col-sm-2 col-form-label">
             Activity
@@ -202,6 +182,7 @@ export default function Calorie() {
           Calculate BmI
         </button>
         <br />
+        
         <br />
         <div className="mb-3 row">
           <label htmlFor="inputtext" className="col-sm-2 col-form-label">
@@ -215,6 +196,20 @@ export default function Calorie() {
               rows="1"
             ></textarea>
             <br />
+          </div>
+        </div>
+
+        <div className="mb-3 row">
+          <label htmlFor="inputtext" className="col-sm-2 col-form-label">
+            Body Fat Percentage
+          </label>
+          <div className="col-sm-10">
+            <textarea
+              className="form-control"
+              value={bf}
+              id="ta"
+              rows="1"
+            ></textarea>
           </div>
         </div>
         <div className="mb-3 row">
