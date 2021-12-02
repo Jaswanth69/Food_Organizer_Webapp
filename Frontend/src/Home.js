@@ -24,8 +24,9 @@ export default function Home() {
       <Navbar />
       
       <h1 className="container">
-        Add The Products You Buy To The Inventory
+        Items
       </h1>
+      <div className="top_links">
       <div id="list-example" className="list-group">
         <div className="row">
           <div className="col-lg-2 col-md-4 items_sides">
@@ -35,6 +36,7 @@ export default function Home() {
               data-bs-toggle="tooltip" data-bs-placement="bottom" title="Fruits Section"
             >
               {/* <div className="myDIV"> */}
+             {/* <h1>Fruits</h1>  */}
               Fruits
             </a>
           </div>
@@ -104,6 +106,8 @@ export default function Home() {
             </a>
           </div>
         </div>
+      </div>
+      <br/>
       </div>
       {/* <button type="button" className="btn btn-dark" >Dark</button> */}
       <div

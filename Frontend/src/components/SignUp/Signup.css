@@ -1,21 +1,52 @@
 .form-container {
-  margin: 100px auto;
+  margin: 0px auto;
   width: 500px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2); */
   position: relative;
   border-radius: 10px;
-  height: 900px;
+  height: 570px;
   display: grid;
 }
 
+
+.form-container1 {
+  margin: 0px auto;
+  margin-left:650px;
+  width: 500px;
+  /* box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2); */
+  position: relative;
+  border-radius: 10px;
+  height: 525px;
+  display: grid;
+}
+
+.bgsignup{
+  /* background-color: rgb(149, 231, 66); */
+  background-image: url("https://cdn.pixabay.com/photo/2015/11/04/15/11/food-1022674_1280.jpg");
+  background-size: cover;
+}
 .form-content {
   border-radius: 0 10px 10px 0;
   position: relative;
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     rgb(0, 232, 236) 0%,
     rgb(255, 125, 39) 100%
-  );
+  ); */
+}
+
+
+.form-content1 {
+  border-radius: 0 10px 10px 0;
+  position: relative;
+   background: linear-gradient(
+    90deg,
+    rgb(67, 117, 224) 0%,
+    rgb(75, 77, 202) 100%
+  ); 
+}
+.fo_img{
+  margin-right: 90%;
 }
 
 .form {
@@ -56,6 +87,7 @@
   display: inline-block;
   font-size: 0.8rem;
   margin-bottom: 6px;
+  font-weight: bold;
   color: #fff;
 }
 
@@ -107,6 +139,112 @@
 
 .link-login {
   text-decoration: none;
-  color: darkolivegreen;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
   padding-top: 10px;
 }
+
+.logomar{
+  margin-left:425px;
+}
+
+.signinup1{
+  margin-top:10px;
+  height:30px;
+  width:80px;
+  text-align: center;
+  font-weight: 800;
+  margin-left:310px;
+  background: linear-gradient(
+    90deg,
+    rgb(3, 140, 219) 0%,
+    rgb(59, 178, 233) 100%
+  );
+  /* margin-left:500px; */
+}
+
+.signinup1:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 143, 255) 0%,
+    rgb(12, 99, 250) 100%
+  );
+  transition: all 0.4s ease-out;
+}
+
+.signinup2{
+  margin-top:10px;
+  height:30px;
+  width:80px;
+  text-align: center;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    rgb(3, 140, 219) 0%,
+    rgb(59, 178, 233) 100%
+  );
+  /* margin-left:400px; */
+  /* margin-left:500px; */
+}
+
+.signinup2:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 143, 255) 0%,
+    rgb(12, 99, 250) 100%
+  );
+  transition: all 0.4s ease-out;
+}
+
+.signinup12{
+  margin-top:10px;
+  height:30px;
+  width:80px;
+  text-align: center;
+  font-weight: 800;
+  margin-left:120px;
+  background: linear-gradient(
+    90deg,
+    rgb(3, 140, 219) 0%,
+    rgb(59, 178, 233) 100%
+  );
+  /* margin-left:500px; */
+}
+
+.signinup12:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 143, 255) 0%,
+    rgb(12, 99, 250) 100%
+  );
+  transition: all 0.4s ease-out;
+}
+
+.signinup22{
+  margin-top:10px;
+  height:30px;
+  width:80px;
+  text-align: center;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    rgb(3, 140, 219) 0%,
+    rgb(59, 178, 233) 100%
+  );
+  /* margin-left:400px; */
+  /* margin-left:500px; */
+}
+
+.signinup2:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 143, 255) 0%,
+    rgb(12, 99, 250) 100%
+  );
+  transition: all 0.4s ease-out;
+}
+

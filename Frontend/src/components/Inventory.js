@@ -9,7 +9,7 @@ export default function Inventory() {
   const [foodlist, setfoodlist] = useState([]);
   useEffect(() => {
     x = localStorage.getItem("userName");
-    console.log(x);
+    // console.log(x);
     Axios.get("http://localhost:3001/item/read").then((response) => {
       // setfoodlist(response);
       console.log(response);
@@ -27,37 +27,27 @@ export default function Inventory() {
         <Navbar />
 
         <div>
-          <p id="para">{x}</p>
+          <p id="para"></p>
           {/* <img src={food} alt="Items" /> */}
-          <h1>list of items</h1>
-
+          <div className="container">
+          <h1> Your Inventory </h1>
+          </div>
           {foodlist.map((val, key) => {
             return (
               <div key={key}>
                 {val.emailId === x ? (
+                  
                   <div className="inventorybox">
-                    <label className="Name" htmlFor="name">
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      type="text"
-                      className="itemname-input"
-                      name="Name"
-                      value={val.Itemname}
-                    />
-                    {/* <h1> {val.Itemname}</h1> */}
-                    {/* <h1> {val.emailId}</h1> */}
-                    <label className="place" htmlFor="place">
-                      Place
-                    </label>
-                    <input
-                      id="place"
-                      type="text"
-                      className="place-input"
-                      name="Place"
-                      value={val.storageplace}
-                    />
+                    <img src={val.Img_link} height="150px" width="200px"/>
+                    <div>
+                        <div className="container">
+                        <h6>{val.quantity}</h6>
+                        </div>
+                        <div className="container">
+                        <h6>{val.Itemname} in {val.storageplace}</h6>
+                        </div>
+                    </div>
+              
                     {/* <i className="fa fa-trash" onClick={DeleteItem(val._id)}></i> */}
                     <button
                       id="update_inventory"
@@ -72,7 +62,9 @@ export default function Inventory() {
                 ) : (
                   <></>
                 )}
+              
               </div>
+              
             );
           })}
         </div>

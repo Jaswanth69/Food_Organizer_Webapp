@@ -91,5 +91,10 @@ a:hover {
 
 .breakers {
   height: 40px;
-  background-color: sandybrown;
+  background-color: rgb(253, 253, 253);
+}
+
+.top_links{
+  padding-left: 10px;
+  padding-right: 10px;
 }

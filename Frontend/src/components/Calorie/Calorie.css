@@ -1,3 +1,26 @@
+
+/* .contain {
+  text-align: center;
+} */
+
+.block {
+  height: 100px;
+  width: 400px;
+  text-align: left;
+}
+.center {
+  margin: auto;
+}
+
+.calorie-page{
+  /* background-image: url("../../images/calorie.jpg"); */
+  /* background-color: chartreuse; */
+  background-size:100% 100%;
+  margin-left: 10px;
+}
+.col-form-label{
+  color: black;
+}
 textarea.form-control {
 	width: 250px;
 	height: 35px;

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useForm from "./SignupForm";
 import validate from "./validateInfo";
 import "./Signup.css";
+import "../Navbar.css";
 // Signup page
 
 export default function SignUp() {
@@ -21,10 +22,16 @@ export default function SignUp() {
 
   return (
     <>
-      <div className="form-container">
-        <div className="form-content">
+    <div className="row bgsignup">
+    <div className="logo logomar">
+            Food<font>Organizer</font>
+            {/* <a type="button"  className="btn btn-success signinup1" href="/loginpage">Signin</a>
+            <a type="button" className="btn btn-success signinup2" href="/signup">SignUp</a> */}
+            </div>
+      <div className="form-container1">
+        <div className="form-content1">
           <form className="form" onSubmit={handleSubmit} noValidate>
-            <h1>Sign up</h1>
+            <h3>Sign up</h3>
             <div className="form-inputs">
               <label className="form-label">Username</label>
               <input
@@ -123,6 +130,9 @@ export default function SignUp() {
           </form>
         </div>
       </div>
+      
+    </div>
     </>
+    
   );
 }

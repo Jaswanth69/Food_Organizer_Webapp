@@ -8,6 +8,7 @@ import dataleafyvegetables from './Leafydata';
 import dataflour from './floursdata';
 import datadryfruits from './dryfruitsdata';
 import PropTypes from 'prop-types'
+import './cards.css';
 
 const Search = (props)=> {
 
@@ -82,7 +83,7 @@ const Search = (props)=> {
                     <div className=" col-4 mx-auto text-center">
                         <div className="row">
                         <div className ="col-lg-6 col-md-12">
-                        <label className="form-label h4">{props.heading}</label>
+                        <label className="form-label h2"><h2>{props.heading}</h2></label>
                         </div>
                         <div className="col-lg-6 col-md-12 searchbar">
                         <input 
@@ -100,26 +101,51 @@ const Search = (props)=> {
                 </div>
                 {dataSearch.map((item,index)=>{
                     return(
-                <div className="col-lg-2 col-md-4">
+            //     <div className="col-lg-2 col-md-4">
+            //     {" "}
+            //     <div className="container boxes3">
+            //       <h7 className="container">{item.title}</h7>
+            //       {/* <BsInfoCircle className="btn_info_circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"/> */}
+            //       <img
+            //         src={item.img}
+            //         className="img-1"
+            //         alt="..."
+            //       ></img>
+            //       <br />
+            //       <a className="btn btn1" href="/Addproduct" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add button"onClick={()=>{
+            //           localStorage.setItem("Name",item.title);
+            //           localStorage.setItem("Image",item.img);
+            //           localStorage.setItem("Head",props.value);
+            //       }}>ADD</a>
+                  
+            //     </div>
+            //     <br />
+            //   </div>
+            <div className="col-lg-2 col-md-4 col-sm-12">
                 {" "}
-                <div className="container boxes3">
-                  <h7 className="container">{item.title}</h7>
-                  {/* <BsInfoCircle className="btn_info_circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"/> */}
-                  <img
+                <div className="container">
+                <div className="card">
+                    <div className="imgBx">
+                    <img
                     src={item.img}
                     className="img-1"
                     alt="..."
                   ></img>
-                  <br />
-                  <a className="btn btn1" href="/Addproduct" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add button"onClick={()=>{
+                    </div>
+                    <div className="content">
+                    <h7>{item.title}</h7>
+                    <br/>
+                    <a className="btn btn1" href="/Addproduct" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add button"onClick={()=>{
                       localStorage.setItem("Name",item.title);
                       localStorage.setItem("Image",item.img);
                       localStorage.setItem("Head",props.value);
-                  }}>ADD</a>
-                  
+                    }}>ADD</a>
+                    </div>
                 </div>
-                <br />
-              </div>
+                </div>
+                <br/>
+            </div>
+            // <br/>
                     )
                 })}
                 

@@ -5,3 +5,10 @@
 a:hover{
     color: rgb(0, 6, 83);
 }
+
+.bgimg{
+    background-image: url("https://cdn.pixabay.com/photo/2015/05/04/10/16/vegetables-752153__340.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: 10;
+}

@@ -19,6 +19,9 @@ const items=new mongoose.Schema({
      quantity:{
       type:Number,
       },
+      Img_link:{
+         type:String,
+      },
       date:{
          type:String,
       },

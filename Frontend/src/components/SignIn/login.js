@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useForm from "./loginForm";
 import validate from "./validateInfo";
 import "./login.css";
+import "../Navbar.css";
 // Login page
 
 export default function Login() {
@@ -10,9 +11,23 @@ export default function Login() {
 
   return (
     <>
+    <div className="bgimg">
+    <div className="logo logomar">
+            Food<font>Organizer</font>
+            <a type="button"  className="btn btn-success signinup1" href="/loginpage">SignIn</a>
+            <a type="button" className="btn btn-success signinup2" href="/signup">SignUp</a>
+            </div>
+            
+          
       <div className="form-container">
         <div className="form-content">
           <form className="form" onSubmit={handleSubmit} noValidate>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <h1>Sign in</h1>
 
             <div className="form-inputs">
@@ -55,6 +70,7 @@ export default function Login() {
             </Link>
           </form>
         </div>
+      </div>
       </div>
     </>
   );
