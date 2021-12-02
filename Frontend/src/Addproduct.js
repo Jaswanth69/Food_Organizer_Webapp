@@ -81,7 +81,9 @@ export default function Addproduct() {
             setQuantity(qty)
             // setimglink(localStorage.getItem("Image"))
             console.log(x + " " + itemname + " " + storage)
-            axios.post("http://localhost:3001/item/insert", { Itemname: itemname, emailId: x, storageplace: storage ,quantity:qty,date:purdate,Itemtype:itemtype,Img_link:image })
+
+            axios.post("http://localhost:3001/item/insert", { Itemname: itemname, emailId: x, storageplace: storage ,quantity:qty,date:purdate,Itemtype:itemtype ,Img_link:image})
+
             var t = new Date();
             var h = t.getHours();
             var m = t.getMinutes();

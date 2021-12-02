@@ -14,8 +14,6 @@ export default function Login() { //login component
     <div className="bgimg">
     <div className="logo logomar">
             Food<font>Organizer</font>
-            {/* <a type="button"  className="btn btn-success signinup1" href="/loginpage">SignIn</a>
-            <a type="button" className="btn btn-success signinup2" href="/signup">SignUp</a> */}
             </div>
             
           
