@@ -8,8 +8,8 @@ export default function Notifications () {
 
     useEffect(()=>{
         var x = localStorage.getItem("userName");
-        Axios.post("http://localhost:3001/notify/getmailid", { emailId: x });
-        Axios.get("http://localhost:3001/notify/read").then((response) => {
+        Axios.post("/notify/getmailid", { emailId: x });
+        Axios.get("/notify/read").then((response) => {
             console.log(response.data);
             setNotification(response.data)
         });

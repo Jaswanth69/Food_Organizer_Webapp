@@ -12,8 +12,8 @@ export default function Updateprofile() { // update profile component
     const [pgender,setpgender]=useState("");
    useEffect(()=>{
     var x = localStorage.getItem("userName");
-    axios.post("http://localhost:3001/user/getmailid", { emailId: x }); // getting user from database with this email id
-    axios.get("http://localhost:3001/user/read").then((response) => { // reading user from database
+    axios.post("/user/getmailid", { emailId: x }); // getting user from database with this email id
+    axios.get("/user/read").then((response) => { // reading user from database
         // console.log(response.data);
         id=response.data[0]._id 
         setpname(response.data[0].username);
@@ -40,7 +40,7 @@ const updatedetails=()=>{ // updating details on button click
     // };
     // if(Object.keys(name).length==0)
     //     setname(pname)
-    axios.put("http://localhost:3001/user/update",{id:id,username:name,phone:number,gender:gender}); // update details in database
+    axios.put("/user/update",{id:id,username:name,phone:number,gender:gender}); // update details in database
 }
     return (
         <div>   

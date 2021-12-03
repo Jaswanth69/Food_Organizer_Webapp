@@ -11,7 +11,7 @@ export default function EmailForm() { // email component for forgot password
 
     // const sendotp = async () => {
     //     try{
-    //         axios.post('http://localhost:3001/user/email-send',{emailId:values.email});
+    //         axios.post('/user/email-send',{emailId:values.email});
     //     }
     //     catch(e){
     //         toast.error("something went wrong");

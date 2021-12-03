@@ -82,7 +82,7 @@ export default function Addproduct() {
             // setimglink(localStorage.getItem("Image"))
             console.log(x + " " + itemname + " " + storage)
 
-            axios.post("http://localhost:3001/item/insert", { Itemname: itemname, emailId: x, storageplace: storage ,quantity:qty,date:purdate,Itemtype:itemtype ,Img_link:image})
+            axios.post("/item/insert", { Itemname: itemname, emailId: x, storageplace: storage ,quantity:qty,date:purdate,Itemtype:itemtype ,Img_link:image})
 
             var t = new Date();
             var h = t.getHours();
@@ -98,9 +98,9 @@ export default function Addproduct() {
                 title: `Expiry of ${itemname}`,
                 body: `${itemname} is going to expire in ${date1.diffDays} days ( at ${date1.d} )`,
             }
-            axios.post('http://localhost:3001/notify/notification',
+            axios.post('/notify/notification',
             {emailId: x,time: h+":"+m,date: date1.d,notifications: notif});
-            axios.post('http://localhost:3001/user/sendemail',{emailId: x, notifications: notif})
+            axios.post('/user/sendemail',{emailId: x, notifications: notif})
 
         }
         store.addNotification({

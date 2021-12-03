@@ -32,10 +32,10 @@ const useForm = (validate) => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       // callback()
       localStorage.setItem("userName", values.email);
-      axios.post("http://localhost:3001/user/getmailid", {
+      axios.post("/user/getmailid", {
         emailId: values.email,
       });
-      axios.get("http://localhost:3001/user/read").then((response) => {
+      axios.get("/user/read").then((response) => {
         // console.log(serl/.password + "  --- " + values.password);
         if (response.data[0].emailId === values.email) {
           if (response.data[0].password == values.password) {

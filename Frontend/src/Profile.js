@@ -14,8 +14,8 @@ export default function Profile() {
 var id;
   useEffect(()=>{
     var x = localStorage.getItem("userName");
-    axios.post("http://localhost:3001/user/getmailid", { emailId: x });
-    axios.get("http://localhost:3001/user/read").then((response) => {
+    axios.post("/user/getmailid", { emailId: x });
+    axios.get("/user/read").then((response) => {
       id=response.data[0]._id
           if(response.data[0].emailId===x)
           {        

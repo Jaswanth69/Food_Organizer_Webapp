@@ -28,7 +28,7 @@ const useForm = (validate) => { // validating the form and settign or unsetting 
   useEffect(() => { // using useEffect
     if (Object.keys(errors).length === 0 && isSubmitting) { // if there are no errors and the form is submitted
 
-        axios.post("http://localhost:3001/user/email-send",{emailId:values.email}); //sending otp to email
+        axios.post("/user/email-send",{emailId:values.email}); //sending otp to email
 
         
         history.push('/getotp') // going to otp page

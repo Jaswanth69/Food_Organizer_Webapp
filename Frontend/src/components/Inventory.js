@@ -8,14 +8,14 @@ export default function Inventory() { // inventory component
   useEffect(() => {
     x = localStorage.getItem("userName"); // getting username from local storage
     // console.log(x);
-    Axios.get("http://localhost:3001/item/read").then((response) => { // reading user from database
+    Axios.get("/item/read").then((response) => { // reading user from database
       // setfoodlist(response);
       console.log(response);
       setfoodlist(response.data); // setting foodlist
     });
   }, []);
   const DeleteItem = (id) => { // deleting an item oin foodlist array
-    Axios.delete(`http://localhost:3001/item/delete/${id}`);
+    Axios.delete(`/item/delete/${id}`);
 
     window.location.reload();
   };

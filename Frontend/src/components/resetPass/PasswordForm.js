@@ -17,7 +17,7 @@ export default function PasswordForm() { // changing password component
             return false;
         }
         else{ // resetting the password
-            axios.put("http://localhost:3001/user/reset-password",{password: pass})
+            axios.put("/user/reset-password",{password: pass})
             history.push("/loginpage") // on resetting moving to login page to login
         }        
     }

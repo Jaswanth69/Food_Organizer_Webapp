@@ -7,7 +7,7 @@ export default function OtpForm() {
 
     const history = useHistory();
     useEffect(()=>{
-        axios.post("http://localhost:3001/user/getOtp").then(res =>{
+        axios.post("/user/getOtp").then(res =>{
   
         var otp = res.data;
         console.log(res.data);

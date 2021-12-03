@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "frontend": " cd .. && cd frontend && npm start",
+    "Frontend-install":"npm install --prefix client",
+    "Frontend": " cd Frontend && npm start",
     "dev": "nodemon app.js",
-    "start": "concurrently \"npm run dev\" \"npm run frontend\" "
+    "start": "concurrently \"npm run dev\" \"npm run Frontend\" ",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix Frontend && npm run build --prefix Frontend"
   },
   "author": "",
   "license": "ISC",
