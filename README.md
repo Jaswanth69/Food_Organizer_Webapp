@@ -78,7 +78,7 @@ npm start
 
 Apps working Link
 =============================
-https://foodorganizerweb.herokuapp.com/
+https://food-organizer-web.herokuapp.com/
 
 Future Implementations
 ============================
